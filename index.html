@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ArticleHub</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script type="module" src="./js/main.js"></script>
+  </head>
+
+  <body class="min-h-screen flex flex-col">
+    <header class="navbar bg-base-200 shadow-sm px-6">
+      <div class="flex-1">
+        <a class="text-2xl font-bold"> ArticleHub </a>
+      </div>
+
+      <nav class="flex gap-2">
+        <a href="#" class="btn btn-ghost"> Home </a>
+
+        <a href="#article-form" class="btn btn-ghost"> Add article </a>
+      </nav>
+    </header>
+
+    <main class="flex-1 container mx-auto px-6 py-10">
+      <section class="mb-8">
+        <h1 class="text-4xl font-bold mb-2">Articles</h1>
+
+        <p class="text-base-content/70">Discover interesting articles</p>
+      </section>
+
+      <section class="flex flex-col md:flex-row gap-4 mb-8">
+        <input
+          id="search-input"
+          type="text"
+          placeholder="Search articles..."
+          class="input input-bordered w-full"
+        />
+
+        <select id="sort-select" class="select select-bordered">
+          <option disabled selected>Sort by</option>
+
+          <option value="title-asc">Title A-Z</option>
+
+          <option value="title-desc">Title Z-A</option>
+
+          <option value="id-asc">ID ascending</option>
+
+          <option value="id-desc">ID descending</option>
+        </select>
+      </section>
+
+      <section
+        id="articles-container"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      ></section>
+    </main>
+
+    <footer class="footer footer-center bg-base-200 text-base-content p-8">
+      <div class="w-full max-w-md">
+        <h2 class="text-2xl font-bold mb-2">Add your article</h2>
+
+        <p class="text-base-content/70 mb-5">
+          Have something interesting to share?
+        </p>
+
+        <form id="article-form" class="flex flex-col gap-3">
+          <input
+            id="article-title"
+            type="text"
+            placeholder="Article title"
+            class="input input-bordered w-full"
+            required
+          />
+
+          <textarea
+            id="article-body"
+            placeholder="Article text"
+            class="textarea textarea-bordered w-full"
+            required
+          ></textarea>
+
+          <button id="add-article-btn" type="submit" class="btn btn-primary">
+            Add article
+          </button>
+        </form>
+      </div>
+
+      <aside class="mt-4">
+        <p>© 2026 ArticleHub</p>
+      </aside>
+    </footer>
+  </body>
+</html>
